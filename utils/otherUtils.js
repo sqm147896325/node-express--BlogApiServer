@@ -4,6 +4,7 @@ module.exports = class OtherUtils{
 	};
 	// 初始化
 	init(){};
+
 	/** 更改对象键名称
 	*	@param		obj			[Object]	传入的对象
 	*	@param		original	[Array]		更改前的键名
@@ -26,6 +27,7 @@ module.exports = class OtherUtils{
 			});
 		};
 	};
+	
 	/**	检测对象中是否含有对应键值
 	 *	@param		obj		[Object]		传入的对象
 	 *	@param		arr		[Array]			要检测的键名

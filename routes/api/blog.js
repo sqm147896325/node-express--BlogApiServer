@@ -23,6 +23,7 @@ router.get('/list', (req, res) => {
 			// 如果有错误
 			resBody.msg = '数据库错误'
 			resBody.flag = 0;
+            res.status(250).send(resBody);
 			return false;
 		}
 		resBody.flag = 1;
@@ -46,7 +47,7 @@ router.post('/addBlog', function (req, res) {
             console.log(err);
 			resBody.msg = '数据库错误';
             resBody.flag = 0;
-            res.status(400).send(resBody);
+            res.status(250).send(resBody);
 			return false;
 		};
 		resBody.flag = 1;
@@ -66,6 +67,7 @@ router.post('/updateBlog', function (req, res) {
 		if(err){
 			resBody.msg = '数据库错误'
 			resBody.flag = 0;
+            res.status(250).send(resBody);
 			return false;
 		};
 		resBody.flag = 1;

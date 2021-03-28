@@ -42,20 +42,20 @@ app.use(function(req, res, next) {
 					// 如果有错误
 					console.log(err);
 					resBody.msg = '数据库错误';
-					res.status(400).send(resBody);
+					res.status(250).send(resBody);
 					return false;
 				}
 				if(!data[0]){
 					// 如果没有查到数据
 					resBody.msg = 'token被替换失效'
-					res.status(400).send(resBody);
+					res.status(250).send(resBody);
 					return false;
 				};
 				return next();
 			});
 		}).catch((error)=>{
 			// token错误或已过期
-			res.status(422).send({
+			res.status(250).send({
 				flag: 0,
 				msg: 'token错误或已过期'
 			});

@@ -21,20 +21,20 @@ router.post('/login', function (req, res) {
 	let body = req.body;
 	if(!otherUtils.checkObjKeys(body,['id','password'])){
 		// 如果请求中不含有对应键值
-		res.status(400).send('需要账户密码');
+		res.status(233).send('需要账户密码');
 		return false;
 	};
 	db.query(`select \`id\` FROM user where id=${body.id} AND password=${body.password}`,(err,data)=>{
 		if(err){
 			// 如果有错误
 			resBody.msg = '数据库错误';
-			res.status(400).send(resBody);
+			res.status(250).send(resBody);
 			return false;
 		}
 		if(!data[0]){
 			// 如果没有查到数据
 			resBody.msg = '账号密码错误'
-			res.status(400).send(resBody);
+			res.status(233).send(resBody);
 			return false;
 		}
 		resBody.flag = 1;
